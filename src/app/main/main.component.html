@@ -1,0 +1,20 @@
+<h2>Question Setup</h2>
+
+<form class="form" #f="ngForm" (ngSubmit)="handleValue(f)">
+  <input 
+    name="number"
+    type="text"
+    ngModel
+    #num="ngModel"
+    placeholder="How many questions"
+    class="number"
+    id="number"
+    >
+  <!-- <input type="text" placeholder="Categories">
+  <input type="text" placeholder="Difficulty">
+  <input type="text" placeholder="Type of Question"> -->
+  <input type="submit" >
+  <p>Value entered: {{ num.value}}</p>
+</form>
+
+

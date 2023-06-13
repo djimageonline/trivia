@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: darkkhaki;
+  padding: .5em;
+}
+
+.nav-list {
+  margin-right: 1em;
+}
+
