@@ -6,10 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
+  
   constructor(private http:HttpClient){} 
-    getData()
+
+    getData(numofQuest : any)
     {
-      let url = "https://opentdb.com/api.php?amount=10";
+      let url = `https://opentdb.com/api.php?amount=${numofQuest}`;
+      console.log(url)
       return this.http.get(url);
     }
 

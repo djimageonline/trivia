@@ -11,19 +11,16 @@ import {NgForm} from '@angular/forms';
 })
 export class MainComponent {
 
-  numOfQuestions: number = 0;
+  numOfQuestions: any;
+
+  constructor(private user: UsersService){}
 
    handleValue(f: NgForm) {
-    console.log(f.value.number);
     this.numOfQuestions = Number(f.value.number)
     console.log("Number",this.numOfQuestions);
-    // You can perform additional logic here
-
-  }
-
-  constructor(private user: UsersService){
-    this.user.getData().subscribe(data => {
+    
+    this.user.getData(this.numOfQuestions).subscribe(data => {
       console.warn(data)
-    })
+    })   
   }
 }
