@@ -21,7 +21,12 @@
   
   <div *ngFor="let question of questions['results']; let i=index" class=" questions-container">
     <p class="question">{{i + 1}}. {{question.question | removeString}}</p>
-    <p class="correct-answer">{{question. correct_answer | removeString}}</p>
+    <p class="correct-answer">{{question.correct_answer | removeString}}</p>
+
+    <div *ngFor="let answer of question['incorrect_answers']">
+      <p class="incorrect-answers">{{answer | removeString}}</p>
+    </div>
+    
   </div>
 
 </div>
