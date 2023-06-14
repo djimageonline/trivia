@@ -10,6 +10,7 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
+  questions: any = {}
 
   numOfQuestions: any;
 
@@ -20,7 +21,9 @@ export class MainComponent {
     console.log("Number",this.numOfQuestions);
     
     this.user.getData(this.numOfQuestions).subscribe(data => {
-      console.warn(data)
+      console.log(data)
+      this.questions = data 
+      console.log(this.questions)
     })   
   }
 }

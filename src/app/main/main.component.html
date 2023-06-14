@@ -1,20 +1,30 @@
-<h2>Question Setup</h2>
 
-<form class="form" #f="ngForm" (ngSubmit)="handleValue(f)">
-  <input 
-    name="number"
-    type="text"
-    ngModel
-    #num="ngModel"
-    placeholder="How many questions"
-    class="number"
-    id="number"
-    >
-  <!-- <input type="text" placeholder="Categories">
-  <input type="text" placeholder="Difficulty">
-  <input type="text" placeholder="Type of Question"> -->
-  <input type="submit" >
-  <p>Value entered: {{ num.value}}</p>
-</form>
+<div class="main-container">
+  <h2>Question Setup</h2>
+
+  <form class="form" #f="ngForm" (ngSubmit)="handleValue(f)">
+    <input 
+      name="number"
+      type="text"
+      ngModel
+      #num="ngModel"
+      placeholder="How many questions"
+      class="number"
+      id="number"
+      >
+    <input type="text" placeholder="Categories">
+    <input type="text" placeholder="Difficulty">
+    <input type="text" placeholder="Type of Question">
+    <input type="submit" >
+    <p>Value entered: {{num.value}}</p>
+  </form>
+  
+  <div *ngFor="let question of questions['results']; let i=index" class=" questions-container">
+    <p class="question">{{i + 1}}. {{question.question | removeString}}</p>
+    <p class="correct-answer">{{question. correct_answer | removeString}}</p>
+  </div>
+
+</div>
+
 
 
